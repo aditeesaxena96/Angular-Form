@@ -1,0 +1,53 @@
+<form [formGroup]="Form1" align="center">
+  <h2>SIGN UP</h2>
+  <label>
+   First Name:&nbsp;&nbsp;
+    <input type="text" formControlName="f_name" placeholder="First Name">
+    <span *ngIf="!Form1.controls['f_name'].valid">*</span>
+  </label><br/><br/><br/><br/>
+  <label>
+
+   Last Name: &nbsp;&nbsp;
+    <input type="text"  formControlName="l_name" placeholder="Last Name">
+    <span *ngIf="!Form1.controls['l_name'].valid">*</span>
+  </label><br/><br/><br/><br/>
+
+  <label>
+      EmployeeId:&nbsp;&nbsp;
+      <input type="text"  formControlName="emp_id" placeholder="Employee Id">
+      <span *ngIf="!Form1.controls['emp_id'].valid">*</span>
+    </label><br/><br/><br/><br/>
+   <label>
+    Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="email"  formControlName="mail" placeholder="Email">
+     <span *ngIf="!Form1.controls['mail'].valid">*</span>
+   </label><br/><br/><br/><br/>
+
+   <label> 
+    Contact No.:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input  type="text" formControlName="num" placeholder="Contact No.">
+      <span *ngIf="!Form1.controls['num'].valid">*</span>
+    </label><br/><br/><br/>
+
+    <label>
+    Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="password"  formControlName="pass1" placeholder="Password">
+     <span *ngIf="!Form1.controls['pass1'].valid">*</span>
+   </label><br/><br/><br/><br/>
+
+   <label>
+    Confirm Password:&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="password"  formControlName="pass2" placeholder="Confirm Password">
+     <span *ngIf="!Form1.controls['pass2'].valid">*</span> 
+   </label><br/><br/><br/><br/>
+
+   <label>
+      Gender:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <input type="text"  formControlName="gender" placeholder="Gender">
+       <span *ngIf="!Form1.controls['gender'].valid">*</span> 
+     </label><br/><br/><br/><br/>
+  
+  
+   <button type="submit" [disabled]="!Form.valid" >Submit</button>
+  
+  </form>
