@@ -15,12 +15,13 @@ export class ReactformComponent implements OnInit {
       f_name:new FormControl('',[ Validators.required,
       Validators.maxLength(24),
     Validators.minLength(4),
-    Validators.pattern("[^A-Za-z]+")
+    Validators.pattern("^[A-Za-z]+")
     ]),
     l_name : new FormControl('',[
       Validators.required,
       Validators.maxLength(24), 
       Validators.minLength(4), 
+      Validators.pattern("^[A-Za-z]+")
     ]),
     emp_id :new FormControl('',[
       Validators.required,
@@ -35,7 +36,8 @@ export class ReactformComponent implements OnInit {
     ]),
     num :new FormControl('',[
       Validators.required,
-      Validators.minLength(10)
+      Validators.minLength(10),
+      Validators.pattern('[0-9]*')
     ]),
     pass1 : new FormControl('',[
       Validators.required,
@@ -48,7 +50,7 @@ export class ReactformComponent implements OnInit {
     gender :new FormControl('',[
       Validators.required,
       Validators.minLength(1),  
-      Validators.maxLength(6),  
+      Validators.maxLength(7),  
     ]),
     });
    }
