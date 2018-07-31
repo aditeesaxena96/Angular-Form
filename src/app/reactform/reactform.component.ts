@@ -10,18 +10,31 @@ import { Validators } from '@angular/forms';
 })
 export class ReactformComponent implements OnInit {
    Form1:FormGroup
+   check(){
+    if(this.Form1.value.pass1!==this.Form1.value.pass2)
+    {
+      console.log("password incorrect")
+    }
+    else{
+     console.log("password correct");
+    }
+  }
+   storeData(){
+    localStorage.setItem("form_data",JSON.stringify(this.Form1.value));
+    //console.log(this.Form1.value);
+  }
   constructor() {
-    this.Form1=new FormGroup({
+    this.Form1=new FormGroup({ 
       f_name:new FormControl('',[ Validators.required,
       Validators.maxLength(24),
     Validators.minLength(4),
-    Validators.pattern("^[A-Za-z]+")
+    Validators.pattern("^[A-Za-z]+$")
     ]),
     l_name : new FormControl('',[
       Validators.required,
       Validators.maxLength(24), 
       Validators.minLength(4), 
-      Validators.pattern("^[A-Za-z]+")
+      Validators.pattern("^[A-Za-z]+$")
     ]),
     emp_id :new FormControl('',[
       Validators.required,
@@ -50,7 +63,7 @@ export class ReactformComponent implements OnInit {
     gender :new FormControl('',[
       Validators.required,
       Validators.minLength(1),  
-      Validators.maxLength(7),  
+      Validators.maxLength(6),  
     ]),
     });
    }
