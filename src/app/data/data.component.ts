@@ -10,8 +10,6 @@ export class DataComponent {
   item;
   constructor() {
   this.item = JSON.parse(localStorage.getItem("form_data"));
-  // console.log(item);
-  // console.log(JSON.parse(item))
    }
 
   

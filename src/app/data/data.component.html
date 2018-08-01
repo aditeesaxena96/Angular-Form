@@ -1,8 +1,70 @@
-<p>
-  data works!
-  
-</p>
-{{item.emp_id}}
-{{item.emp_}}
-{{item.emp_id}}
-{{item.emp_id}}
+
+<table border="1" align="center">
+  <tr>
+    <td>
+      First Name
+    </td>
+    <td>
+      {{item.f_name}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Last Name
+    </td>
+    <td>
+        {{item.l_name}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Employee Id
+    </td>
+    <td>
+        {{item.emp_id}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Mail
+    </td>
+    <td>
+        {{item.mail}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Number
+    </td>
+    <td>
+        {{item.num}}
+    </td>
+  </tr>
+  <tr>
+    <td>
+      Password
+    </td>
+    <td>
+        {{item.pass1}}
+    </td>
+  </tr>
+  <tr>
+    <td>Confirm Password</td>
+    <td>{{item.pass2}}</td>
+  </tr>
+  <tr>
+    <td>
+      Gender
+    </td>
+    <td>
+        {{item.gender}}
+    </td>
+  </tr>
+
+</table>
+<nav>
+    <a routerLink="/editted">
+<button type="submit"  >Edit</button>
+</a>
+</nav>
+
