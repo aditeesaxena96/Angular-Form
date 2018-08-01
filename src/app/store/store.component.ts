@@ -60,12 +60,12 @@ export class StoreComponent {
     ]),
     pass1 : new FormControl(dataformstorage.pass1,[
       Validators.required,
-      Validators.pattern('?=.*[0-9])(?=.*[a-z])(?=.*[$@$!%*?&()_+={};;"|,.<>]).{0,16}')
+      //Validators.pattern('?=.*[0-9])(?=.*[a-z])(?=.*[$@$!%*?&()_+={};;"|,.<>]).{0,16}')
 
     ]),
     pass2 : new FormControl(dataformstorage.pass2,[
       Validators.required, 
-      Validators.pattern('?=.*[0-9])(?=.*[a-z])(?=.*[$@$!%*?&()_+={};;"|,.<>]).{0,16}')
+    //  Validators.pattern('?=.*[0-9])(?=.*[a-z])(?=.*[$@$!%*?&()_+={};;"|,.<>]).{0,16}')
     ]),
     gender :new FormControl(dataformstorage.gender,[
       Validators.required,
