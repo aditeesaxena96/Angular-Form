@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms';
 import { FormGroup} from '@angular/forms';
+
 import { Validators } from '@angular/forms';
+import {Router} from '@angular/router'
+import { DataStoreService } from '../data-store.service';
 
 @Component({
   selector: 'app-reactform',
   templateUrl: './reactform.component.html',
   styleUrls: ['./reactform.component.css']
 })
-export class ReactformComponent implements OnInit {
+export class ReactformComponent {
    Form1:FormGroup
    check(){
     if(this.Form1.value.pass1!==this.Form1.value.pass2)
@@ -19,12 +22,21 @@ export class ReactformComponent implements OnInit {
      console.log("password correct");
     }
   }
+  type:string="password";
+    showHide(){
+      if(this.type==="text")
+        this.type="password";
+     else
+      this.type="text";   
+    }
     
    Data(){
-    localStorage.setItem("form_data",JSON.stringify(this.Form1.value));
+   // localStorage.setItem("form_data",JSON.stringify(this.Form1.value));
      console.log(this.Form1.value);
+     this.service.store(this.Form1.value);
+     this.router.navigate(['/data']);
   }
-  constructor() {
+  constructor(private service : DataStoreService , private router :Router) {
     this.Form1=new FormGroup({ 
       f_name:new FormControl('',[ Validators.required,
       Validators.maxLength(24),
@@ -68,8 +80,7 @@ export class ReactformComponent implements OnInit {
     ]),
     });
    }
-
-  ngOnInit() {
-  }
+  
+  
 
 }

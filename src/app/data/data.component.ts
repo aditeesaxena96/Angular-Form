@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStoreService } from '../data-store.service';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-data',
@@ -8,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class DataComponent {
  
   item;
-  constructor() {
-  this.item = JSON.parse(localStorage.getItem("form_data"));
+  constructor(private service:DataStoreService, private route : Router) {
+ // this.item = JSON.parse(localStorage.getItem("form_data"));
+    this.item =service.getStoreData();
    }
-
-  
-
+   edit()
+   {
+     console.log("hi");
+     this.route.navigate(['/editted']);
+     
+   }
 }

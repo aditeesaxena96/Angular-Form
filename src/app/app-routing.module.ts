@@ -9,7 +9,7 @@ const routes: Routes= [
   { path :'reactform',
   component: ReactformComponent
 },
-{ path : 'editted', component: StoreComponent },
+{ path : 'editted', component: StoreComponent }
 ];
 @NgModule({
   imports: [

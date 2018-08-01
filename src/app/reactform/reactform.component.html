@@ -33,7 +33,10 @@
 
     <label>
     Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <input type="password"  formControlName="pass1" placeholder="Password">
+
+     <!-- <input type="password"  formControlName="pass1" placeholder="Password"> -->
+     <input type="{{type}}" formControlName="pass1">
+      <span (click)="showHide()"class="glyphicon glyphicon-record"></span>
      <span *ngIf="!Form1.controls['pass1'].valid">*</span>
    </label><br/><br/><br/><br/>
 
@@ -48,9 +51,8 @@
        <input type="text"  formControlName="gender" placeholder="Gender">
        <span *ngIf="!Form1.controls['gender'].valid">*</span> 
      </label><br/><br/><br/><br/>
-     <nav>
-     <a routerLink="/data">
+   
    <button type="submit" [disabled]="!Form1.valid" >Submit</button>
-  </a>
-  </nav>
+  
+  
   </form>
