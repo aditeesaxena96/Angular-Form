@@ -1,0 +1,13 @@
+#tab{
+    width: 35%;
+    height: 100%;
+    margin-top: 10%;
+    font-size: 25px
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+button
+{
+    margin-left: 45%;
+    width: 5%;
+    height: 10%;
+}

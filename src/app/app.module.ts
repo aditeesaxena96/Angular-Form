@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { ReactformComponent } from './reactform/reactform.component';
 import { DataComponent } from './data/data.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { StoreComponent } from './store/store.component';
 
 
 @NgModule({
@@ -14,7 +13,7 @@ import { StoreComponent } from './store/store.component';
     AppComponent,
     ReactformComponent,
     DataComponent,
-    StoreComponent
+    
   ],
   imports: [
     BrowserModule,

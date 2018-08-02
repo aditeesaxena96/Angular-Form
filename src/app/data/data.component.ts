@@ -17,7 +17,7 @@ export class DataComponent {
    edit()
    {
      console.log("hi");
-     this.route.navigate(['/editted']);
+     this.route.navigate(['/reactform']);
      
    }
 }
