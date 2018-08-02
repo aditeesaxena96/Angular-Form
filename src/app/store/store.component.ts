@@ -3,6 +3,7 @@ import { FormControl} from '@angular/forms';
 import { FormGroup, FormBuilder} from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { DataStoreService } from '../data-store.service';
+import {Router} from '@angular/router'
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -24,11 +25,8 @@ export class StoreComponent {
     }
   }
     
-   Data(){
-    localStorage.setItem("form_data",JSON.stringify(this.Form1.value));
-     console.log(this.Form1.value);
-  }
-  constructor(private servics : DataStoreService) {
+   
+  constructor(private servics : DataStoreService, private router :Router) {
     var dataformstorage =servics.getStoreData();
     this.Form1=new FormGroup({ 
       f_name:new FormControl(dataformstorage.f_name,[ Validators.required,
@@ -77,6 +75,11 @@ export class StoreComponent {
 
   ngOnInit() {
   }
-
+  Data(){
+    // localStorage.setItem("form_data",JSON.stringify(this.Form1.value));
+      console.log(this.Form1.value);
+      this.servics.store(this.Form1.value);
+      this.router.navigate(['/data']);
+   }
 
 }
